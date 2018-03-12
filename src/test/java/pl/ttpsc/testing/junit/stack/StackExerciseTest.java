@@ -1,10 +1,9 @@
 package pl.ttpsc.testing.junit.stack;
 
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.*;
+
+import static org.junit.Assert.*;
 
 public class StackExerciseTest {
 
@@ -22,7 +21,47 @@ public class StackExerciseTest {
         sut = new StackExercise();
     }
 
-    
+    @Test
+    public void shouldStackBeEmpty() {
+        //given
+        //when
+        //then
+        assertTrue(sut.isEmpty());
+    }
+
+    @Test
+    public void shouldStackNotBeEmpty() {
+        //given
+        //when
+        sut.push("first");
+        //then
+        assertFalse(sut.isEmpty());
+    }
+
+    @Test
+    public void shouldGetTop() throws StackEmptyException {
+        //given
+        //when
+        sut.push("first");
+        //then
+        assertEquals("first", sut.top());
+    }
+
+    @Test(expected = StackEmptyException.class)
+    public void shouldThrowExceptionWhenTryToGetTop() throws StackEmptyException {
+        //given
+        //when
+        //then
+        sut.top();
+    }
+
+    @Test(expected = StackEmptyException.class)
+    public void shouldThrowExceptionWhenTryToPop() throws StackEmptyException {
+        //given
+        //when
+        //then
+        sut.top();
+    }
 
     @After
     public void tearDown() {

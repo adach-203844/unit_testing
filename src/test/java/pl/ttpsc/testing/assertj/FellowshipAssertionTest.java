@@ -2,6 +2,7 @@ package pl.ttpsc.testing.assertj;
 
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static pl.ttpsc.testing.assertj.FellowTestFixture.*;
 
 public class FellowshipAssertionTest {
@@ -10,10 +11,12 @@ public class FellowshipAssertionTest {
 
     @Test
     public void frodoShouldBeIn() {
+        assertThat(fellowship).contains(frodo());
     }
 
     @Test
     public void sauronShouldNotBeIn() {
+        assertThat(fellowship).doesNotContain(sauron());
     }
 
     @Test
@@ -34,6 +37,7 @@ public class FellowshipAssertionTest {
 
     @Test
     public void shouldContainNineFellowsButNoneGiant() {
+        assertThat(fellowship).hasSize(9);
     }
 
     @Test

@@ -117,3 +117,5 @@ fabric.properties
 .idea/modules.xml
 .idea/vcs.xml
 zaawansowana-java-testowanie.iml
+
+.idea/codeStyles/codeStyleConfig.xml

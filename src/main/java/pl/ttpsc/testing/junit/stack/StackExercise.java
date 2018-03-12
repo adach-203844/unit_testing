@@ -23,7 +23,7 @@ public class StackExercise {
      */
     public String pop() throws StackEmptyException {
         if (currentIndex == -1) {
-            throw new StackEmptyException();
+            throw new StackEmptyException("Don't pop empty stack!");
         }
 
         return internalArray[currentIndex--];
@@ -56,7 +56,7 @@ public class StackExercise {
         try {
             return internalArray[currentIndex];
         } catch (ArrayIndexOutOfBoundsException e) {
-            throw new StackEmptyException();
+            throw new StackEmptyException("Don't top empty stack!");
         }
 
     }

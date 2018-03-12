@@ -11,4 +11,7 @@ package pl.ttpsc.testing.junit.stack;
 
 public class StackEmptyException extends Exception {
 
+    public StackEmptyException(String s) {
+        super(s);
+    }
 }
